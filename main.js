@@ -109,9 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Splash Screen Handler
     const splash = document.getElementById('splash-screen');
     
-    // Initial Page Determination
-    const hash = window.location.hash.substring(1);
-    const targetId = (hash && pages.includes(hash)) ? hash : 'home';
+    // Initial Page Determination - Always force 'home' on refresh as per user request
+    if (window.location.hash && window.location.hash !== '#home') {
+        history.replaceState(null, null, ' '); // Clear hash without jump
+    }
+    const targetId = 'home';
     
     // Set initial active states
     document.querySelectorAll('.spa-page').forEach(p => p.classList.toggle('active', p.id === targetId));
