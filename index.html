@@ -180,6 +180,15 @@
                             </div>
                         </div>
                     </a>
+                    <a href="#diger-hizmetler" class="project-card reveal nav-link">
+                        <div class="project-image">
+                            <img src="assets/galeri/EKB1.jpg" alt="Diğer Hizmetler" loading="lazy">
+                            <div class="project-info">
+                                <h3>DİĞER HİZMETLER</h3>
+                                <p>Teknik projelerimizi inceleyin</p>
+                            </div>
+                        </div>
+                    </a>
                     <a href="#hakkimizda" class="project-card reveal nav-link">
                         <div class="project-image">
                             <img src="assets/galeri/hakkimizda.jpg" alt="Hakkımızda" loading="lazy">
@@ -208,29 +217,104 @@
                 <h1 class="hero-title interactive-title reveal">MİMARİ<span>PROJELER</span></h1>
                 <p class="hero-subtitle reveal">Estetik ve fonksiyonelliği büyük ölçekli yapılarda buluşturuyoruz.</p>
             </div>
-            <div class="container section-padding">
-                <!-- Okul Projeleri -->
-                <div class="project-category-row reveal">
-                    <div class="category-images-grid">
-                        <div class="category-image"><img src="assets/galeri/okul1.jpg" alt="Okul Mimari"></div>
-                        <div class="category-image"><img src="assets/galeri/okul2.jpg" alt="Okul Mimari"></div>
-                        <div class="category-image"><img src="assets/galeri/okul3.jpg" alt="Okul Mimari"></div>
-                        <div class="category-image"><img src="assets/galeri/okul4.jpg" alt="Okul Mimari"></div>
-                    </div>
-                    <div class="category-text">
-                        <h3>OKUL PROJELERİ</h3>
-                        <p>Genç nesillerin gelişimini destekleyen, modern ve sürdürülebilir eğitim kampüsleri
-                            tasarlıyoruz. Işık, hava ve fonksiyonelliğin ön planda olduğu öğrenme alanları yaratıyoruz.
-                        </p>
+            <!-- Mimari Selector Row -->
+            <div class="category-nav grid-cols-5 container reveal">
+                <div class="category-nav-item active" data-service="okul">
+                    <img src="assets/projects/school.png" alt="Okul Projeleri">
+                    <div class="nav-item-overlay"><h3>OKUL</h3></div>
+                </div>
+                <div class="category-nav-item" data-service="kres">
+                    <img src="assets/projects/edu_int.jpg" alt="Kreş Projeleri">
+                    <div class="nav-item-overlay"><h3>KREŞ</h3></div>
+                </div>
+                <div class="category-nav-item" data-service="villa">
+                    <img src="assets/projects/villa.png" alt="Villa Projeleri">
+                    <div class="nav-item-overlay"><h3>VİLLA</h3></div>
+                </div>
+                <div class="category-nav-item" data-service="apartman">
+                    <img src="assets/projects/apartment.png" alt="Apartman">
+                    <div class="nav-item-overlay"><h3>APARTMAN</h3></div>
+                </div>
+                <div class="category-nav-item" data-service="spor">
+                    <img src="assets/projects/sports.png" alt="Spor Kompleksi">
+                    <div class="nav-item-overlay"><h3>SPOR</h3></div>
+                </div>
+            </div>
+
+            <!-- Mimari Detail Panels -->
+            <div class="category-content-wrapper container reveal">
+                <!-- OKUL PANEL -->
+                <div class="category-panel active" id="panel-okul">
+                    <div class="panel-inner">
+                        <div class="panel-text">
+                            <h3>OKUL PROJELERİ</h3>
+                            <p>Eğitim yapılarında fonksiyonelliği ve güvenliği ön planda tutan, modern öğrenme ortamları tasarlıyoruz. Kamusal ve özel sektör için büyük ölçekli okul projeleri geliştiriyoruz.</p>
+                        </div>
+                        <div class="panel-gallery">
+                            <img src="assets/galeri/okul1.jpg" alt="Okul 1">
+                            <img src="assets/galeri/okul2.jpg" alt="Okul 2">
+                            <img src="assets/galeri/okul3.jpg" alt="Okul 3">
+                        </div>
                     </div>
                 </div>
 
-                <!-- Ana Sınıfı Projeleri -->
+                <!-- KREŞ PANEL -->
+                <div class="category-panel" id="panel-kres">
+                    <div class="panel-inner">
+                        <div class="panel-text">
+                            <h3>ANA SINIFI VE KREŞLER</h3>
+                            <p>Çocukların hayal gücünü destekleyen, güvenli ve eğlenceli okul öncesi eğitim mekanları tasarlıyoruz. Renk ve doku kullanımıyla çocuk dostu mimari çözümler üretiyoruz.</p>
+                        </div>
+                        <div class="panel-gallery">
+                            <img src="assets/galeri/kreş1.jpg" alt="Kreş 1">
+                            <img src="assets/galeri/kreş2.jpg" alt="Kreş 2">
+                            <img src="assets/galeri/kreş3.jpg" alt="Kreş 3">
+                        </div>
                     </div>
-                    <div class="category-text">
-                        <h3>SPOR KOMPLEKSİ PROJELERİ</h3>
-                        <p>Enerjik ve dinamik yapılar. Uluslararası standartlarda, çok amaçlı ve teknolojik altyapıya
-                            sahip spor tesisleri ve kompleksleri geliştiriyoruz.</p>
+                </div>
+
+                <!-- VİLLA PANEL -->
+                <div class="category-panel" id="panel-villa">
+                    <div class="panel-inner">
+                        <div class="panel-text">
+                            <h3>VİLLA PROJELERİ</h3>
+                            <p>Kişiye özel lüks konut tasarımları, villa mimarisi ve yaşam alanları. Doğayla iç içe, modern ve estetik detaylarla örülü konut projeleri gerçekleştiriyoruz.</p>
+                        </div>
+                        <div class="panel-gallery">
+                            <img src="assets/galeri/villa1.jpg" alt="Villa 1">
+                            <img src="assets/galeri/villa2.jpg" alt="Villa 2">
+                            <img src="assets/galeri/villa3.jpg" alt="Villa 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APARTMAN PANEL -->
+                <div class="category-panel" id="panel-apartman">
+                    <div class="panel-inner">
+                        <div class="panel-text">
+                            <h3>APARTMAN TASARIMLARI</h3>
+                            <p>Modern şehir yaşamına uygun, estetik ve verimli apartman projeleri. Yaşam kalitesini artıran konut blokları ve toplu konut çözümleri sunuyoruz.</p>
+                        </div>
+                        <div class="panel-gallery">
+                            <img src="assets/galeri/apartman1.jpg" alt="Apartman 1">
+                            <img src="assets/galeri/apartman2.jpg" alt="Apartman 2">
+                            <img src="assets/galeri/apartman3.jpg" alt="Apartman 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SPOR PANEL -->
+                <div class="category-panel" id="panel-spor">
+                    <div class="panel-inner">
+                        <div class="panel-text">
+                            <h3>SPOR KOMPLEKSLERİ</h3>
+                            <p>Geniş açıklıklı yapılar, spor salonları ve stadyum projeleri. Fonksiyonel ihtiyaçların teknolojiyle birleştiği büyük ölçekli spor tesisi tasarımları yapıyoruz.</p>
+                        </div>
+                        <div class="panel-gallery">
+                            <img src="assets/galeri/spor1.jpg" alt="Spor 1">
+                            <img src="assets/galeri/spor2.jpg" alt="Spor 2">
+                            <img src="assets/galeri/spor3.jpg" alt="Spor 3">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -285,9 +369,9 @@
                             <p>Miniklerin dünyasına hitap eden, güvenli, eğlenceli ve öğretici iç mekan kurguları. Çocuk psikolojisine uygun renk ve malzeme seçimleriyle butik dokunuşlar.</p>
                         </div>
                         <div class="panel-gallery">
-                            <img src="assets/galeri/kreşiç2.jpg" alt="Kreş İç 1">
-                            <img src="assets/galeri/kreşiç3.jpg" alt="Kreş İç 2">
-                            <img src="assets/galeri/kreşiç4.jpg" alt="Kreş İç 3">
+                            <img src="assets/galeri/kreş1.jpg" alt="Kreş İç 1">
+                            <img src="assets/galeri/kreş2.jpg" alt="Kreş İç 2">
+                            <img src="assets/galeri/kreş3.jpg" alt="Kreş İç 3">
                         </div>
                     </div>
                 </div>
