@@ -24,8 +24,16 @@ function switchPage(targetId) {
     // Background Video Transition
     const currentVideo = document.querySelector('.spa-bg-video.active');
     const targetVideo = document.getElementById(`video-${targetId}`);
-    if (currentVideo) currentVideo.classList.remove('active');
-    if (targetVideo) targetVideo.classList.add('active');
+    
+    if (currentVideo && currentVideo !== targetVideo) {
+        currentVideo.classList.remove('active');
+        currentVideo.pause();
+    }
+    
+    if (targetVideo) {
+        targetVideo.classList.add('active');
+        targetVideo.play().catch(e => console.log("Video play logic:", e));
+    }
 
     // Content Transition (Page Turn)
     const exitClass = direction === 'forward' ? 'page-flip-exit-forward' : 'page-flip-exit-backward';
