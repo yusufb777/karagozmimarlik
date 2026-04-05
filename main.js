@@ -46,7 +46,7 @@ function switchPage(targetId) {
         
         initInteractiveTitles();
         initRevealAnimations();
-        initServiceCards();
+        initCategorySelectors();
     }, 1300); // Slightly longer than 1.2s CSS
 }
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 splash.remove();
                 initInteractiveTitles();
                 initRevealAnimations();
-                initServiceCards();
+                initCategorySelectors();
             }, 800);
         };
 
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         initInteractiveTitles();
         initRevealAnimations();
-        initServiceCards();
+        initCategorySelectors();
     }
 
     // Initialize UI features
@@ -298,39 +298,41 @@ if (contactForm) {
     });
 }
 
-// Service Card/Tab Interaction
-function initServiceCards() {
-    const navItems = document.querySelectorAll('.service-nav-item');
-    const panels = document.querySelectorAll('.service-panel');
+/* --- CATEGORY SELECTOR LOGIC --- */
+function initCategorySelectors() {
+    const navs = document.querySelectorAll('.category-nav');
     
-    if (navItems.length === 0) return;
+    navs.forEach(nav => {
+        const parentSection = nav.closest('.spa-page');
+        const navItems = nav.querySelectorAll('.category-nav-item');
+        const panels = parentSection.querySelectorAll('.category-panel');
+        
+        navItems.forEach(item => {
+            if (item.dataset.initialized) return;
+            item.dataset.initialized = "true";
 
-    navItems.forEach(item => {
-        if (item.dataset.initialized) return;
-        item.dataset.initialized = "true";
+            item.addEventListener('click', () => {
+                const targetService = item.dataset.service;
+                
+                // Update nav items for THIS section only
+                navItems.forEach(navItem => navItem.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Update panels for THIS section only
+                panels.forEach(panel => {
+                    panel.classList.remove('active');
+                    if (panel.id === `panel-${targetService}`) {
+                        panel.classList.add('active');
+                    }
+                });
 
-        item.addEventListener('click', () => {
-            const service = item.dataset.service;
-            
-            // Update nav items
-            navItems.forEach(nav => nav.classList.remove('active'));
-            item.classList.add('active');
-            
-            // Update panels
-            panels.forEach(panel => {
-                panel.classList.remove('active');
-                if (panel.id === `panel-${service}`) {
-                    panel.classList.add('active');
+                // Scroll to the content area for better visibility
+                const contentWrapper = parentSection.querySelector('.category-content-wrapper');
+                if (contentWrapper) {
+                    const scrollTarget = contentWrapper.offsetTop - 150;
+                    parentSection.scrollTo({ top: scrollTarget, behavior: 'smooth' });
                 }
             });
-
-            // Scroll to the content area for better visibility
-            const contentWrapper = document.querySelector('.services-content-wrapper');
-            const page = document.querySelector('.spa-page.active');
-            if (contentWrapper && page) {
-                const scrollTarget = contentWrapper.offsetTop - 150; // Adjust for header
-                page.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-            }
         });
     });
 }

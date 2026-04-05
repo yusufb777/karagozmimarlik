@@ -590,15 +590,18 @@ img {
     }
 }
 
-/* --- INTERACTIVE SERVICES NAV (TAB STYLE) --- */
-.services-nav {
+/* --- INTERACTIVE CATEGORY NAV (TAB STYLE) --- */
+.category-nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-bottom: 40px;
 }
 
-.service-nav-item {
+.grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+.category-nav-item {
     position: relative;
     height: 300px;
     border-radius: 20px;
@@ -608,7 +611,7 @@ img {
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.service-nav-item img {
+.category-nav-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -627,35 +630,35 @@ img {
 }
 
 .nav-item-overlay h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 3px;
     color: #fff;
     font-weight: 600;
 }
 
-.service-nav-item:hover img {
+.category-nav-item:hover img {
     transform: scale(1.1);
     filter: brightness(0.8);
 }
 
-.service-nav-item.active {
+.category-nav-item.active {
     border-color: var(--accent-color);
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
     transform: translateY(-5px);
 }
 
-.service-nav-item.active img {
+.category-nav-item.active img {
     filter: brightness(1);
 }
 
-/* --- SERVICE CONTENT PANELS --- */
-.services-content-wrapper {
+/* --- CATEGORY CONTENT PANELS --- */
+.category-content-wrapper {
     position: relative;
     min-height: 400px;
     margin-bottom: 80px;
 }
 
-.service-panel {
+.category-panel {
     display: none;
     opacity: 0;
     transform: translateY(30px);
@@ -667,7 +670,7 @@ img {
     backdrop-filter: blur(10px);
 }
 
-.service-panel.active {
+.category-panel.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
@@ -716,8 +719,8 @@ img {
 }
 
 @media (max-width: 1024px) {
-    .services-nav {
-        grid-template-columns: repeat(2, 1fr);
+    .category-nav {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     
     .panel-inner {
@@ -725,17 +728,17 @@ img {
         gap: 30px;
     }
     
-    .service-panel {
+    .category-panel {
         padding: 30px;
     }
 }
 
 @media (max-width: 600px) {
-    .services-nav {
-        grid-template-columns: 1fr;
+    .category-nav {
+        grid-template-columns: 1fr !important;
     }
     
-    .service-nav-item {
+    .category-nav-item {
         height: 200px;
     }
     
