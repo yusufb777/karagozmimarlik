@@ -20,8 +20,11 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
 }
 
 body {
@@ -29,7 +32,6 @@ body {
     background-color: var(--bg-dark);
     color: var(--primary-color);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 h1,
@@ -825,6 +827,14 @@ img {
     transform-origin: left center;
     backface-visibility: hidden;
     z-index: 10;
+    
+    /* Hide scrollbar but keep functionality */
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.spa-page::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 .spa-page.active {
