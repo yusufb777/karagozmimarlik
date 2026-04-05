@@ -68,6 +68,10 @@ img {
     padding: 120px 5%;
 }
 
+#home .section-padding {
+    padding: 40px 5% 120px;
+}
+
 /* Header & Nav */
 .header {
     position: fixed;
@@ -281,7 +285,7 @@ img {
     font-size: 1rem;
     letter-spacing: 2px;
     max-width: 700px;
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
     color: var(--secondary-color);
     text-transform: uppercase;
 }
