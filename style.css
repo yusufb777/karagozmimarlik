@@ -32,32 +32,6 @@ body {
     overflow-x: hidden;
 }
 
-/* --- CUSTOM SCROLLBAR (STYLISH & MINIMAL) --- */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
-    border-radius: 10px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #00cc00;
-}
-
-/* Firefox */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) transparent;
-}
-
 h1,
 h2,
 h3,
@@ -492,11 +466,6 @@ img {
         scroll-snap-align: start;
         height: 380px;
     }
-
-    /* Hide scrollbar for cleaner mobile look while allowing swipe */
-    .projects-grid::-webkit-scrollbar {
-        display: none;
-    }
 }
 
 /* Mobile Adjustments */
@@ -855,7 +824,6 @@ img {
     padding-top: 100px;
     transform-origin: left center;
     backface-visibility: hidden;
-    scrollbar-width: none;
     z-index: 10;
 }
 
